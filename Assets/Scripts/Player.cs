@@ -10,10 +10,7 @@ public class Player : MonoBehaviour
     private bool jumpKeyWasPressed;
     private float horizontalInput;
     private Rigidbody rigidbodyComponent;
-    private bool isGrounded;
     
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +31,7 @@ public class Player : MonoBehaviour
     //FixedUpdate is called once every physics update, not affected by FPS, 100 a second default
     private void FixedUpdate()
     {
-        rigidbodyComponent.velocity = new Vector3(horizontalInput,rigidbodyComponent.velocity.y,0);
+        rigidbodyComponent.velocity = new Vector3(horizontalInput * 3,rigidbodyComponent.velocity.y,0);
         
         if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0)
         {
@@ -43,18 +40,8 @@ public class Player : MonoBehaviour
         
         if (jumpKeyWasPressed)
         {
-            rigidbodyComponent.AddForce(Vector3.up * 5,ForceMode.VelocityChange);
+            rigidbodyComponent.AddForce(Vector3.up * 7,ForceMode.VelocityChange);
             jumpKeyWasPressed = false;
         }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        isGrounded = false;
     }
 }
