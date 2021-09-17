@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.layer == 7)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene (sceneName:"Endscreen");
         }
     }
     
