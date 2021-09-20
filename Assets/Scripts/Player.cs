@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,18 +10,21 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Transform groundCheckTransform;
     [SerializeField] private LayerMask playerMask;
-    [SerializeField] Material powerup;
+    [SerializeField] Material superJump;
+    [SerializeField] Material superSpeed;
     [SerializeField] Material player;
     private bool jumpKeyWasPressed;
     private float horizontalInput;
     private float verticalInput;
     private Rigidbody rigidbodyComponent;
-    private int superJumpsRemaining;
+    private bool tempSuperJump;
+    private bool tempSuperSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyComponent = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -38,7 +42,12 @@ public class Player : MonoBehaviour
     //FixedUpdate is called once every physics update, not affected by FPS, 100 a second default
     private void FixedUpdate()
     {
-        rigidbodyComponent.velocity = new Vector3(horizontalInput * 2,rigidbodyComponent.velocity.y,verticalInput * 2);
+        float speedMult = 2f;
+        if (tempSuperSpeed)
+        {
+            speedMult *= 1.5f;
+        }
+        rigidbodyComponent.velocity = new Vector3(horizontalInput * speedMult,rigidbodyComponent.velocity.y,verticalInput * speedMult);
 
         if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0)
         {
@@ -48,12 +57,11 @@ public class Player : MonoBehaviour
         if (jumpKeyWasPressed)
         {
             float jumpPower = 5f;
-            if (superJumpsRemaining > 0)
+            if (tempSuperJump)
             {
                 jumpPower *= 1.5f;
-                superJumpsRemaining--;
             }
-            transform.GetComponent<Renderer>().material = player;
+            
             rigidbodyComponent.AddForce(Vector3.up * jumpPower,ForceMode.VelocityChange);
             jumpKeyWasPressed = false;
         }
@@ -65,15 +73,42 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Destroy(other.gameObject);
-            superJumpsRemaining++;
-            transform.GetComponent<Renderer>().material = powerup;
             GameObject.Find("Score Text").GetComponent<Score>().score++;
+            
+            switch (other.name)
+            {
+                case "Super Jump":
+                    StartCoroutine(tempJumpBoost());
+                    break;
+                
+                case "Super Speed":
+                    StartCoroutine(tempSpeedBoost());
+                    break;
+            }
         }
         
         if (other.gameObject.layer == 7)
         {
             SceneManager.LoadScene (sceneName:"Endscreen");
         }
+    }
+
+    IEnumerator tempJumpBoost()
+    {
+        transform.GetComponent<Renderer>().material = superJump;
+        tempSuperJump = true;
+        yield return new WaitForSeconds(5);
+        tempSuperJump = false;
+        transform.GetComponent<Renderer>().material = player;
+    }
+    
+    IEnumerator tempSpeedBoost()
+    {
+        transform.GetComponent<Renderer>().material = superSpeed;
+        tempSuperSpeed = true;
+        yield return new WaitForSeconds(5);
+        tempSuperSpeed = false;
+        transform.GetComponent<Renderer>().material = player;
     }
     
 }
