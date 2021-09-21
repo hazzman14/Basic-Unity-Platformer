@@ -106,7 +106,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3126}
     - Class: 114
-      Script: {instanceID: 41588}
+      Script: {instanceID: 3232}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -418,7 +418,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 5b1e0a6daa2bd87f1e9b74d05223ce40
+      Hash: 9d1f114ad2ef6c830fcfeeace15a4daa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -440,6 +440,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: db9051796aa7286a94629912c13c6af8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Score
   - hash:
       serializedVersion: 2
       Hash: a81d4c2c1cf3ad164d277d927a193679
@@ -554,12 +560,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: db9051796aa7286a94629912c13c6af8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Score
   platform: 19
   scenePathNames:
   - Assets/Scenes/Level 1.unity
