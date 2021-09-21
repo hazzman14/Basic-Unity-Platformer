@@ -7,19 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] Transform groundCheckTransform;
-    [SerializeField] private LayerMask playerMask;
-    [SerializeField] Material superJump;
-    [SerializeField] Material superSpeed;
-    [SerializeField] Material player;
-    [SerializeField] private Material flag;
-    [SerializeField] Text powerupText;
-    private bool jumpKeyWasPressed;
+    public Transform groundCheckTransform;
+    public LayerMask playerMask;
+    public Material superJump;
+    public Material superSpeed;
+    public Material player;
+    public Material flag;
+    public Material flight;
+    public Text powerupText;
     private float horizontalInput;
     private float verticalInput;
+    public bool tempSuperJump;
+    public bool tempSuperSpeed;
+    public bool tempFly;
+    private bool jumpKeyWasPressed;
     private Rigidbody rigidbodyComponent;
-    [SerializeField] bool tempSuperJump;
-    [SerializeField] bool tempSuperSpeed;
     public Vector3 respawnPoint = new Vector3(-2, 1, .5f);
 
     // Start is called before the first frame update
@@ -32,8 +34,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpKeyWasPressed = true;
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         }
         rigidbodyComponent.velocity = new Vector3(horizontalInput * speedMult,rigidbodyComponent.velocity.y,verticalInput * speedMult);
 
-        if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0)
+        if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0 && tempFly == false)
         {
             return;
         }
@@ -80,55 +80,67 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        switch (other.gameObject.layer)
         {
-            Destroy(other.gameObject);
-            GameObject.Find("Score Text").GetComponent<Score>().score++;
+            case 6:
+                Destroy(other.gameObject);
+                GameObject.Find("Score Text").GetComponent<Score>().score++;
            
-            switch (other.name)
-            {
-                case "Super Jump":
-                    StartCoroutine(tempJumpBoost());
-                    break;
+                switch (other.name)
+                {
+                    case "Super Jump":
+                        StartCoroutine(tempJumpBoost());
+                        break;
                 
-                case "Super Speed":
-                    StartCoroutine(tempSpeedBoost());
-                    break;
-            }
-        }
-        
-        if (other.gameObject.layer == 7)
-        {
-            SceneManager.LoadScene (sceneName:"Endscreen");
-        }
-        
-        if (other.gameObject.layer == 8)
-        {
-            other.GetComponent<Renderer>().material = flag;
-            respawnPoint = other.GetComponent<Transform>().position;
+                    case "Super Speed":
+                        StartCoroutine(tempSpeedBoost());
+                        break;
+                    case "Flight":
+                        StartCoroutine(tempFlying());
+                        break;
+                }
+                break;
+            case 7:
+                SceneManager.LoadScene (sceneName:"Endscreen");
+                break;
+            case 8:
+                other.GetComponent<Renderer>().material = flag;
+                respawnPoint = other.GetComponent<Transform>().position;
+                break;
         }
     }
     //put these 2 methods into powerup class and set text there, hard to do ienumerators, - use instance?
     IEnumerator tempJumpBoost()
     {
-        transform.GetComponent<Renderer>().material = superJump;
+        gameObject.GetComponent<Renderer>().material = superJump;
         tempSuperJump = true;
         powerupText.text = "Super Jump!";
         yield return new WaitForSeconds(5);
         powerupText.text = "";
         tempSuperJump = false;
-        transform.GetComponent<Renderer>().material = player;
+        gameObject.GetComponent<Renderer>().material = player;
     }
     
     IEnumerator tempSpeedBoost()
     {
-        transform.GetComponent<Renderer>().material = superSpeed;
+        gameObject.GetComponent<Renderer>().material = superSpeed;
         tempSuperSpeed = true;
         powerupText.text = "Super Speed!";
         yield return new WaitForSeconds(5);
         powerupText.text = "";
         tempSuperSpeed = false;
-        transform.GetComponent<Renderer>().material = player;
+        gameObject.GetComponent<Renderer>().material = player;
+    }
+    
+    IEnumerator tempFlying()
+    {
+        gameObject.GetComponent<Renderer>().material = flight;
+        tempFly = true;
+        powerupText.text = "Flappy Bird!";
+        yield return new WaitForSeconds(5);
+        powerupText.text = "";
+        tempFly = false;
+        gameObject.GetComponent<Renderer>().material = player;
     }
 
     public void Respawn()
