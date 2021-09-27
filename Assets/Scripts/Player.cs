@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         }
         
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.layer)
@@ -112,35 +112,37 @@ public class Player : MonoBehaviour
     //put these 2 methods into powerup class and set text there, hard to do ienumerators, - use instance?
     IEnumerator tempJumpBoost()
     {
-        gameObject.GetComponent<Renderer>().material = superJump;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = superJump;
+        // gameObject.GetComponent<Renderer>().material = superJump;
         tempSuperJump = true;
         powerupText.text = "Super Jump!";
         yield return new WaitForSeconds(5);
         powerupText.text = "";
         tempSuperJump = false;
-        gameObject.GetComponent<Renderer>().material = player;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = player;
+        // gameObject.GetComponent<Renderer>().material = player;
     }
     
     IEnumerator tempSpeedBoost()
     {
-        gameObject.GetComponent<Renderer>().material = superSpeed;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = superSpeed;
         tempSuperSpeed = true;
         powerupText.text = "Super Speed!";
         yield return new WaitForSeconds(5);
         powerupText.text = "";
         tempSuperSpeed = false;
-        gameObject.GetComponent<Renderer>().material = player;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = player;
     }
     
     IEnumerator tempFlying()
     {
-        gameObject.GetComponent<Renderer>().material = flight;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = flight;
         tempFly = true;
         powerupText.text = "Flappy Bird!";
         yield return new WaitForSeconds(5);
         powerupText.text = "";
         tempFly = false;
-        gameObject.GetComponent<Renderer>().material = player;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = player;
     }
 
     public void Respawn()

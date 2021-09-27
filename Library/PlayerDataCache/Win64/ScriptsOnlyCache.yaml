@@ -418,7 +418,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 9d1f114ad2ef6c830fcfeeace15a4daa
+      Hash: a106a15f9735c41f5cf584efed510299
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -564,4 +564,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Level 1.unity
   - Assets/Scenes/Endscreen.unity
-  playerPath: C:/Users/harry/Desktop/Game/FirstTry.exe
+  playerPath: C:/Users/harry/Desktop/Game/Platformer.exe
