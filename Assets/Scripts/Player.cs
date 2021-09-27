@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
         tempSuperSpeed = true;
         powerupText.text = "Super Speed!";
         yield return new WaitForSeconds(5);
+        gameObject.GetComponent<animationStateController>().animator.SetBool("isRunning",false);
         powerupText.text = "";
         tempSuperSpeed = false;
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = player;

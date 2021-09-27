@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class animationStateController : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isWalkingForwards", false);
         }
         
-        if (Input.GetKey("left shift") && Input.GetKey("d") )
+        if (gameObject.GetComponent<Player>().tempSuperSpeed == true && Input.GetKey("d") )
         {
             animator.SetBool("isRunning", true);
         }
