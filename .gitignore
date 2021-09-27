@@ -1,96 +1,71 @@
-﻿/Temp/UnityLockfile
-/Library/Artifacts/0b/0b1258f7ad0e693013c103362b6dda94
-/Library/Artifacts/0d/0d592b3d4420dc76526b06c86599a0a2
-/Library/Artifacts/0e/0e425f5b3f3f2bef28c41f53cf90d0c2
-/Library/Artifacts/03/03a8c8e64e82d03956b66b994bf18089
-/Library/Artifacts/4f/4f631d863aa28c615b7d281978af0642
-/Library/Artifacts/5a/5a6c78b18367702ee566eb6d81ec0c70
-/Library/Artifacts/9f/9f3b626d28859470460f628ebdd233d8
-/Library/Artifacts/36/36b37ec9530a2b2d887c1b9c401c0465
-/Library/Artifacts/53/53cbfa26f6f334ade9e7ce16017dae1c
-/Library/Artifacts/63/63db799263ce3be35da54d27470cc15a
-/Library/Artifacts/88/88c9d942451f56ba2ac6706af81be12c
-/Library/Artifacts/18/189c5835bf50834dfda335698671de75
-/Library/Artifacts/24/240a2924dcec337534009cec1599b8f4
-/Library/Artifacts/25/255b93e05553572f3035807d581c58a6
-/Library/Artifacts/28/286afeb96e7ba01cdeceee8f42f1f17c
-/Library/Artifacts/24/2468c47ff208a33ea3019a99f2182de3
-/Library/Artifacts/17/17249ca6ca7c0b08122b19e1271ba405
-/Library/Artifacts/a4/a4bbe1ff410274f538bfc038d8ab6d38
-/Library/Artifacts/a1/a11bbf1d48e8e172c9ec0d1d09750ca0
-/Library/Artifacts/ad/ad3b5f0ad36babcfc8d26f082c0110b2
-/Library/Artifacts/ae/ae22d129e989f1cd55f08778a40e5e04
-/Assets/Animations.meta
-/Assets/Scripts/animationStateController.cs.meta
-/Library/Artifacts/b3/b3a2a981c3fed53b2eada778d22e1694
-/Library/Artifacts/b3/b3bf2bc23444ee6727c2e2284e8a2c88
-/Library/Artifacts/b9/b927c1aee35a7950d18b7ea53df3387e
-/Library/Artifacts/cc/cccaadeecb35d819fc5b7d0d8097c254
-/Library/Artifacts/d8/d87c5af6578874ca9d6f65e3eec91e37
-/Library/Artifacts/da/dab1471ab56a7950d8f06c311d5bd35b
-/Library/ShaderCache/e/e00bfc5f87705e2306e4bad52069d900.bin
-/Library/ShaderCache/e/e7cd76b4ac582c89942d1866eb846251.bin
-/Library/ShaderCache/e/e9ddeb36968051cb3661efc345172cb9.bin
-/Library/ShaderCache/e/e054de348cdbe9a8d62a8d9f599d3d59.bin
-/Library/ShaderCache/e/e962a92fcb5605683c231d861b0d693f.bin
-/Library/ShaderCache/e/e9364ba591ad2119a35c1b3ce65c94c3.bin
-/Library/ShaderCache/e/e78059261cfce589e90315c2ac8339e7.bin
-/Library/ShaderCache/e/ec9af591dcb35af72367719be2a3e995.bin
-/Library/ShaderCache/e/ec050f89f763db105c44d2fe2d32a95b.bin
-/Library/ShaderCache/e/ee830567a98ee3166d32391e49d3f913.bin
-/Library/ShaderCache/e/eefb10f13430de6014964fd53c8848d0.bin
-/Assets/Scenes/Endscreen.unity
-/Assets/Scenes/Endscreen.unity.meta
-/Library/ShaderCache/f/f0b5d6d3912fa023131c425f5d42e3a8.bin
-/Library/ShaderCache/f/f0f9c0818b38ee6096a1da610c417c44.bin
-/Library/ShaderCache/f/f0f75a9fab817f2a3f7583428b7f5d2c.bin
-/Library/ShaderCache/f/f2ff0cc17caed5875cfd464a0ec71e80.bin
-/Library/ShaderCache/f/f7cb969b737315955a1956a219a0252e.bin
-/Library/ShaderCache/f/f7cc414201cbc2ab3c1edee3bfaa1c2e.bin
-/Library/ShaderCache/f/f8ae7b59ec8499468c64048179776c8d.bin
-/Library/ShaderCache/f/f8e39035a9974feeb53aa23218fefe58.bin
-/Library/ShaderCache/f/f8f5c36866912406bdc0c023805b39a1.bin
-/Library/ShaderCache/f/f08c9276d7197832b896dba336e63154.bin
-/Library/ShaderCache/f/f28d9483061b6b9411187db0e31f17c7.bin
-/Library/ShaderCache/f/f52ad9d3ae0afcbf66368d09e3eeb8d4.bin
-/Library/ShaderCache/f/f300e64d15b97e62383068272ead6665.bin
-/Library/ShaderCache/f/f599f4e5479025d464f5fbce215f6625.bin
-/Library/ShaderCache/f/f776cdc45f7cdef98337f5b6e8fb4289.bin
-/Library/ShaderCache/f/f852f3a78b64cde076deec3e399187bf.bin
-/Library/ShaderCache/f/f863d2467b2cd398e3e2565007a317a1.bin
-/Library/ShaderCache/f/f951b027ca0232fe6ac3ddf6b5f7f106.bin
-/Library/ShaderCache/f/f2048c95b7ace7108797f16d40f0047d.bin
-/Library/ShaderCache/f/f036843bbc9fb559f556e9572159cb7c.bin
-/Library/ShaderCache/f/fa7186eefaf9730ce1c3b5112b2ff9b4.bin
-/Library/Artifacts/fa/fa1998901aaebbf7bca9b2de573e0e86
-/Library/ShaderCache/f/faed09d2754644075feccfda2dfd2b56.bin
-/Library/Artifacts/fb/fb7747301f608f731a7826d082559180
-/Library/ShaderCache/f/fbfef762bd6aeb2ab8f42976dfe82ac6.bin
-/Library/ShaderCache/f/fd4b770f489eca699cbe41b61d09c5fe.bin
-/Library/ShaderCache/f/fd098d5fef4d3f36333c259a204c3e51.bin
-/Library/ShaderCache/f/fd913bb54a301ed4067a23145261097c.bin
-/Library/ShaderCache/f/fef3be340bbd04e2c127026fc76cc202.bin
-/Library/ShaderCache/f/ff22f33dfeeacf850d670e4d7cbb3ec0.bin
-/Library/ShaderCache/f/ff113b225b4b106579f80ad4b68d9b6c.bin
-/Library/ShaderCache/f/fff83f72cfbf47a31fc3ab977ed4938e.bin
-/Assets/Animations/Idle.anim
-/Assets/Animations/Idle.anim.meta
-/Library/PlayerDataCache/Win64/Data/level1.resS
-/Assets/Scenes/Level 1.unity
-/Assets/Scenes/Level 1.unity.meta
-/Assets/Mixamo.meta
-/Assets/Animations/Running.anim
-/Assets/Animations/Running.anim.meta
-/ProjectSettings/SceneTemplateSettings.json
-/Library/PlayerDataCache/Win64/Data/sharedassets1.assets
-/Temp/UnityLockfile
-/Assets/Animations/Walking.anim
-/Assets/Animations/Walking.anim.meta
-/Assets/Mixamo/ybot@Idle.fbx
-/Assets/Mixamo/ybot@Idle.fbx.meta
-/Assets/Mixamo/ybot@Running.fbx
-/Assets/Mixamo/ybot@Running.fbx.meta
-/Assets/Mixamo/ybot@Walking.fbx
-/Assets/Mixamo/ybot@Walking.fbx.meta
-/Assets/Animations/YBotController.controller
-/Assets/Animations/YBotController.controller.meta
+﻿# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+#
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
+/[Mm]emoryCaptures/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
+# Uncomment this line if you wish to ignore the asset store tools plugin
+# /[Aa]ssets/AssetStoreTools*
+
+# Autogenerated Jetbrains Rider plugin
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Visual Studio cache directory
+.vs/
+
+# Gradle cache directory
+.gradle/
+
+# Autogenerated VS/MD/Consulo solution and project files
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
