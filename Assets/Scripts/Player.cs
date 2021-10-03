@@ -15,14 +15,16 @@ public class Player : MonoBehaviour
     public Material flag;
     public Material flight;
     public Text powerupText;
-    private float horizontalInput;
-    private float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
     public bool tempSuperJump;
     public bool tempSuperSpeed;
     public bool tempFly;
     private bool jumpKeyWasPressed;
     private Rigidbody rigidbodyComponent;
     public Vector3 respawnPoint = new Vector3(-2, 1, .5f);
+    public bool up;
+    public bool down;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +41,9 @@ public class Player : MonoBehaviour
             jumpKeyWasPressed = true;
         }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
         
         if (rigidbodyComponent.transform.position.y < -4)
         {
@@ -52,13 +55,28 @@ public class Player : MonoBehaviour
     //FixedUpdate is called once every physics update, not affected by FPS, 100 a second default
     private void FixedUpdate()
     {
-        float speedMult = 2f;
+
+        float speedMult = 3f;
         if (tempSuperSpeed)
         {
             speedMult *= 2f;
         }
         rigidbodyComponent.velocity = new Vector3(horizontalInput * speedMult,rigidbodyComponent.velocity.y,verticalInput * speedMult);
 
+        //WIP model rotation
+        if (horizontalInput > 0 || horizontalInput < 0 )
+        {
+            gameObject.transform.LookAt(new Vector3(1000,0,0));
+        } else if (verticalInput > 0)
+        {
+            gameObject.transform.LookAt(new Vector3(0,0,90));
+            
+        } else if (verticalInput < 0) {
+            gameObject.transform.LookAt(new Vector3(0,0,-90));
+            
+        }
+
+        
         if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0 && tempFly == false)
         {
             return;

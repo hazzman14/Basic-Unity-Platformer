@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class animationStateController : MonoBehaviour
 {
+    public bool up;
+    public bool down;
+    public bool forward;
+    public bool backwards;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +18,12 @@ public class animationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("d"))
+        up = Input.GetKey("w");
+        down = Input.GetKey("s");
+        forward = Input.GetKey("d");
+        backwards = Input.GetKey("a");
+        
+        if (forward || up || down)
         {
             animator.SetBool("isWalkingForwards", true);
         }
@@ -23,7 +32,7 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isWalkingForwards", false);
         }
         
-        if (gameObject.GetComponent<Player>().tempSuperSpeed == true && Input.GetKey("d") )
+        if (gameObject.GetComponent<Player>().tempSuperSpeed == true && (forward || up || down))
         {
             animator.SetBool("isRunning", true);
         }
@@ -32,16 +41,32 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
         
+        if (Input.GetKey("space") && GameObject.Find("Player").GetComponent<Player>().tempSuperJump==true)
+        {
+            animator.SetBool("isSuperJumping", true);
+        }
+        else
+        {
+            animator.SetBool("isSuperJumping", false);
+        }
+        
         if (Input.GetKey("space"))
         {
+            if (GameObject.Find("Player").GetComponent<Player>().tempSuperJump==true)
+            {
+                animator.speed = 0.66f;
+            }
             animator.SetBool("isJumping", true);
         }
         else
         {
             animator.SetBool("isJumping", false);
+            animator.speed = 1f;
         }
         
-        if (Input.GetKey("a"))
+        
+        
+        if (backwards)
         {
             animator.SetBool("isWalkingBackwards", true);
         }
@@ -49,7 +74,6 @@ public class animationStateController : MonoBehaviour
         {
             animator.SetBool("isWalkingBackwards", false);
         }
-        
-        
+
     }
 }
